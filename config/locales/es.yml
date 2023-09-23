@@ -1,0 +1,24 @@
+es:
+  common:
+    confirm: '¿Estás seguro?'
+    back: 'Volver atrás'
+  main:
+    home:
+      categories: 'Ver categorías'
+  categories:
+    category:
+      edit: 'Editar'
+      delete: 'Borrar'
+    index:
+      title: 'Categorías'
+      new: 'Añadir categoría'
+    edit:
+      title: 'Editar categoría'
+    create:
+      created: 'Tu categoría se ha creado correctamente'
+    update:
+      updated: 'Tu categoría se ha actualizado correctamente'
+    destroy:
+      destroyed: 'Tu categoría se ha eliminado correctamente'
+    new:
+      title: 'Añadir categoría'
