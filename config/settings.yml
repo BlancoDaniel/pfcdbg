@@ -1,0 +1,3 @@
+locales:
+  available: ["es", "en"]
+  default: "es"

@@ -33,6 +33,9 @@ gem "redis", "~> 4.0"
 # Devise
 gem "devise"
 
+#Config
+gem 'config'
+
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
