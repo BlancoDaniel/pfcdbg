@@ -13,7 +13,8 @@ class ClientsController < ApplicationController
     @client = Client.new(client_params)
     @client.user_id = current_user.id
 
-    if  !Client.where(user_id: User.first.id).exists?
+    true_class_false_class = !Promoter.where(user_id: User.first.id).exists? && !Client.where(user_id: User.first.id).exists?
+    if  true_class_false_class
       respond_to do |format|
         if @client.save
           format.html { redirect_to '/', notice: "Usuario cliente creado" }

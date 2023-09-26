@@ -13,7 +13,8 @@ class PromotersController < ApplicationController
     @promoter = Promoter.new(promoter_params)
     @promoter.user_id = current_user.id
 
-    if  !Promoter.where(user_id: User.first.id).exists?
+    true_class_false_class = !Promoter.where(user_id: User.first.id).exists? && !Client.where(user_id: User.first.id).exists?
+    if true_class_false_class
       respond_to do |format|
         if @promoter.save
           format.html { redirect_to '/', notice: "Usuario promotor creado" }
