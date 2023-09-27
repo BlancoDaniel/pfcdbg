@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  rolify
   has_one :client
   has_one :promoter
   # Include default devise modules. Others available are:

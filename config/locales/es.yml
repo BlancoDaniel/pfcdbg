@@ -2,9 +2,13 @@ es:
   common:
     confirm: '¿Estás seguro?'
     back: 'Volver atrás'
-  main:
-    home:
+  shared:
+    header:
       categories: 'Ver categorías'
+      index: 'Inicio'
+      login: 'Iniciar sesión'
+      signup: 'Registrarse'
+      logout: 'Desconectarse'
   categories:
     category:
       edit: 'Editar'

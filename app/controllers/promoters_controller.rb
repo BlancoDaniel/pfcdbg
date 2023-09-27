@@ -1,6 +1,5 @@
 class PromotersController < ApplicationController
 
-
   def new
     @promoter = Promoter.new
 
@@ -11,25 +10,20 @@ class PromotersController < ApplicationController
 
   def create
     @promoter = Promoter.new(promoter_params)
-    @promoter.user_id = current_user.id
 
-    true_class_false_class = !Promoter.where(user_id: User.first.id).exists? && !Client.where(user_id: User.first.id).exists?
-    if true_class_false_class
-      respond_to do |format|
-        if @promoter.save
-          format.html { redirect_to '/', notice: "Usuario promotor creado" }
-        else
-          format.html { render :new, status: :unprocessable_entity }
-        end
-      end
-    else
-      respond_to do |format|
-        format.html { redirect_to '/', notice: "Ya tiene usuario" }
-      end
-    end
+    return redirect_to root_path, notice: "Ya tiene usuario"  if user_has_profile?
+     if @promoter.save
+       current_user.add_role :promoter
+       return redirect_to root_path, notice: "Usuario promotor creado"
+     end
+    render :new, status: :unprocessable_entity
   end
 
   private
+
+  def user_has_profile?
+    Promoter.exists?(user_id: current_user.id) || Client.exists?(user_id: current_user.id)
+  end
 
   def promoter_params
     params.require(:promoter).permit(:name, :cif, :address, :phone_number)

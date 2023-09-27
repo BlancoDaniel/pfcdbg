@@ -1,7 +1,6 @@
 <%= form_with(model: promoter) do |form| %>
   <%= render partial: 'shared/form_errors', locals: { model: promoter } %>
 
-
   <div>
     <%= form.label :name, style: "display: block" %>
     <%= form.text_field :name %>
@@ -21,5 +20,9 @@
 
   <div>
     <%= form.submit %>
+  </div>
+
+  <div>
+    <%= link_to ('Registrarse como Cliente'), new_client_path %>
   </div>
 <% end %>
