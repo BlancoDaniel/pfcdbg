@@ -1,0 +1,28 @@
+<%= form_with(model: client) do |form| %>
+  <%= render partial: 'shared/form_errors', locals: { model: client } %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+  <div>
+    <%= form.label :surname, style: "display: block" %>
+    <%= form.text_field :surname %>
+  </div>
+  <div>
+    <%= form.label :address, style: "display: block" %>
+    <%= form.text_field :address %>
+  </div>
+  <div>
+    <%= form.label :phone_number, style: "display: block" %>
+    <%= form.phone_field :phone_number %>
+  </div>
+  <div>
+    <%= form.label :nif, style: "display: block" %>
+    <%= form.text_field :nif %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

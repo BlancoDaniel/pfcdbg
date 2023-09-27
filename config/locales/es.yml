@@ -22,3 +22,9 @@ es:
       destroyed: 'Tu categoría se ha eliminado correctamente'
     new:
       title: 'Añadir categoría'
+  clients:
+    new:
+      title: 'Nuevo cliente'
+  promoters:
+    new:
+      title: 'Nuevo Promotor'
