@@ -9,12 +9,14 @@ class PromotersController < ApplicationController
   end
 
   def create
-    @promoter = Promoter.new(promoter_params)
+    @promoter = Promoter.create(promoter_params)
+    @promoter.user_id = current_user.id
 
     return redirect_to root_path, notice: "Ya tiene usuario"  if user_has_profile?
      if @promoter.save
        current_user.add_role :promoter
        return redirect_to root_path, notice: "Usuario promotor creado"
+
      end
     render :new, status: :unprocessable_entity
   end
