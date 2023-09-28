@@ -33,6 +33,9 @@ gem "redis", "~> 4.0"
 # Devise
 gem "devise"
 
+# Rolify
+gem "rolify"
+
 #Config
 gem 'config'
 
