@@ -1,0 +1,6 @@
+<%= link_to event_path(event.id), 'data-turbo-frame': '_top' do %>
+  <h2><%= event.name %> - <%= event.category.name %></h2>
+  <h2><%= event.price %>€</h2>
+  <p><%= event.description %></p>
+  <p><%= event.date %></p>
+<%end%>
