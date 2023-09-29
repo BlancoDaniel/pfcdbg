@@ -2,6 +2,7 @@ es:
   common:
     confirm: '¿Estás seguro?'
     back: 'Volver atrás'
+    not_authorized: 'Acceso no autorizado'
   shared:
     header:
       categories: 'Ver categorías'

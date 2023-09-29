@@ -2,18 +2,22 @@ class CategoriesController < ApplicationController
 
   def index
     @categories = Category.all
+    authorize @categories
   end
 
   def new
     @category = Category.new
+    authorize @category
   end
 
   def edit
     find_category
+    authorize @category
   end
 
   def create
     @category = Category.create(category_params)
+    authorize @category
       return redirect_to categories_url, notice: t(".created") if @category.save
 
       render :new, status: :unprocessable_entity
@@ -22,8 +26,8 @@ class CategoriesController < ApplicationController
 
   def update
     find_category
-
-      return format.html { redirect_to categories_url, notice: t(".updated") } if @category.update(category_params)
+    authorize @category
+      return redirect_to categories_url, notice: t(".updated") if @category.update(category_params)
 
       render :edit, status: :unprocessable_entity
   end
@@ -31,6 +35,7 @@ class CategoriesController < ApplicationController
 
   def destroy
     find_category
+    authorize @category
     @category.destroy
 
     redirect_to categories_url, notice: t(".destroyed")
