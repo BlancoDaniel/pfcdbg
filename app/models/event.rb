@@ -1,4 +1,5 @@
 class Event < ApplicationRecord
+  has_one_attached :poster
 
   validates :name,
             :location,
