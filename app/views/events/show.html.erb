@@ -1,0 +1,7 @@
+<%= render partial: 'event_details', locals: {event: @event} %>
+
+<%= link_to t(".edit"), edit_event_path(@event) if policy(@event).update? %>
+<%= link_to t(".delete"), event_path(@event), data: {
+  turbo_method: :delete,
+  turbo_confirm: t("common.confirm"),
+} if policy(@event).destroy? %>

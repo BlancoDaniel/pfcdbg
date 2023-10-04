@@ -8,5 +8,8 @@ class Event < ApplicationRecord
             :price,
             presence: true
 
-  belongs_to :category, :promoter
+  belongs_to :category
+  belongs_to :promoter, class_name: 'Promoter'
+
+
 end

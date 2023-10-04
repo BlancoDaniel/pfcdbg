@@ -33,3 +33,23 @@ es:
   promoters:
     new:
       title: 'Nuevo Promotor'
+  events:
+    event:
+      edit: 'Editar'
+      delete: 'Borrar'
+    index:
+      title: 'Eventos'
+      new: 'Añadir evento'
+    new:
+      title: 'Añadir evento'
+    show:
+      edit: 'Editar evento'
+      delete: 'Eliminar evento'
+    edit:
+      title: 'Editar evento'
+    create:
+      created: 'Tu evento se ha creado correctamente'
+    update:
+      updated: 'Tu evento se ha actualizado correctamente'
+    destroy:
+      destroyed: 'Tu evento se ha eliminado correctamente'
