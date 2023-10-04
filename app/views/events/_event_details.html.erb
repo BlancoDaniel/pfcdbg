@@ -1,6 +1,6 @@
 <div class="row gx-4 gx-lg-5 align-items-center">
   <div class="col-xl-6">
-    <%=image_tag event.poster, class: "img-fluid rounded" if event.poster.attached?%>
+    <%= image_tag event.poster.attached? ? event.poster : 'placeholder.jpg', class: "img-fluid rounded" %>
   </div>
   <div class="col-xl-6">
     <h1 class="display-5 fw-bolder"><%= event.name %></h1>
