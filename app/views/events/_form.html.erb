@@ -27,7 +27,8 @@
   </div>
 
   <div>
-    <%= form.collection_select :category_id, Category.all.order(name: :asc), :id, :name%>
+    <%= form.label :category_id, style: "display: block" %>
+    <%= form.select :category_id, options_from_collection_for_select(@categories, :id, :name) %>
   </div>
 
   <div>

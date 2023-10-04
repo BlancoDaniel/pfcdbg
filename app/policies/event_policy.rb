@@ -15,7 +15,7 @@ class EventPolicy < ApplicationPolicy
   end
 
   def update?
-    user&.has_role?(:promoter) && user.promoter&.id == event.promoter_id
+    create? && user.promoter&.id == event.promoter_id
   end
 
   def edit?
@@ -23,7 +23,7 @@ class EventPolicy < ApplicationPolicy
   end
 
   def destroy?
-    user&.has_role?(:promoter) && user.promoter&.id == event.promoter_id
+    create? && user.promoter&.id == event.promoter_id
   end
 
 end

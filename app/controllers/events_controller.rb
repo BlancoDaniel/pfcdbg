@@ -10,11 +10,13 @@ class EventsController < ApplicationController
 
   def new
     @event = Event.new
+    @categories = Category.all.order(name: :asc)
     authorize @event
   end
 
   def edit
     event
+    @categories = Category.all.order(name: :asc)
     authorize @event
   end
 
