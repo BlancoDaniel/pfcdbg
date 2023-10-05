@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
 
   def index
-    @events = Event.all
+    @events = Event.all.load_async
   end
 
   def show
@@ -10,11 +10,13 @@ class EventsController < ApplicationController
 
   def new
     @event = Event.new
+    @categories = Category.all.order(name: :asc)
     authorize @event
   end
 
   def edit
     event
+    @categories = Category.all.order(name: :asc)
     authorize @event
   end
 
@@ -48,7 +50,7 @@ class EventsController < ApplicationController
 
   private
   def event_params
-    params.require(:event).permit(:name,:description,:price,:date,:location,:ticket_quantity,:category_id)
+    params.require(:event).permit(:name,:description,:price,:date,:location,:ticket_quantity,:category_id,:poster)
   end
 
   def event

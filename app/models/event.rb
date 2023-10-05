@@ -1,4 +1,5 @@
 class Event < ApplicationRecord
+  has_one_attached :poster
 
   validates :name,
             :location,
@@ -9,7 +10,7 @@ class Event < ApplicationRecord
             presence: true
 
   belongs_to :category
-  belongs_to :promoter, class_name: 'Promoter'
+  belongs_to :promoter
 
 
 end
