@@ -1,43 +1,43 @@
-<%= form_with model: @event do |form| %>
+<div class=col-md-12">
+  <%= form_with model: @event, class: "row g-3" do |form| %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
-  <div>
-    <%= form.label :location, style: "display: block" %>
-    <%= form.text_field :location %>
-  </div>
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
-  </div>
-  <div>
-    <%= form.label :date, style: "display: block" %>
-    <%= form.datetime_select :date %>
-  </div>
-  <div>
-    <%= form.label :ticket_quantity, style: "display: block" %>
-    <%= form.number_field :ticket_quantity %>
-  </div>
+    <div class="col-md-6">
+      <%= form.label :name, style: "display: block" %>
+      <%= form.text_field :name %>
+    </div>
+    <div class=col-md-6">
+      <%= form.label :description, style: "display: block" %>
+      <%= form.text_area :description %>
+    </div>
+    <div class="col-md-6">
+      <%= form.label :location, style: "display: block" %>
+      <%= form.text_field :location %>
+    </div>
+    <div class="col-md-6">
+      <%= form.label :date, style: "display: block" %>
+      <%= form.datetime_select :date %>
+    </div>
+    <div class="col-md-4">
+      <%= form.label :ticket_quantity, style: "display: block" %>
+      <%= form.number_field :ticket_quantity %>
+    </div>
+    <div class="col-md-4">
+      <%= form.label :price, style: "display: block" %>
+      <%= form.number_field :price, step: :any %>
+    </div>
+    <div class="col-md-4">
+      <%= form.label :category_id, style: "display: block" %>
+      <%= form.select :category_id, options_from_collection_for_select(@categories, :id, :name) %>
+    </div>
 
-  <div>
-    <%= form.label :price, style: "display: block" %>
-    <%= form.number_field :price, step: :any %>
-  </div>
+    <div>
+      <%= form.file_field :poster %>
+    </div>
 
-  <div>
-    <%= form.label :category_id, style: "display: block" %>
-    <%= form.select :category_id, options_from_collection_for_select(@categories, :id, :name) %>
-  </div>
-
-  <div>
-    <%= form.file_field :poster%>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
+    <div>
+      <%= form.submit %>
+    </div>
 
 
-<% end %>
+  <% end %>
+</div>
