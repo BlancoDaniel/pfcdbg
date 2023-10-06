@@ -11,6 +11,7 @@ es:
       signup: 'Registrarse'
       logout: 'Desconectarse'
       new: 'Nuevo evento'
+      my_events: 'Mis eventos'
   categories:
     category:
       edit: 'Editar'
