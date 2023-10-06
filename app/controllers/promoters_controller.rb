@@ -5,6 +5,11 @@ class PromotersController < ApplicationController
 
   end
 
+  def show
+    promoter
+    @events = Event.where(promoter_id: @promoter.id).load_async
+  end
+
   def edit
   end
 
@@ -29,5 +34,9 @@ class PromotersController < ApplicationController
 
   def promoter_params
     params.require(:promoter).permit(:name, :cif, :address, :phone_number)
+  end
+
+  def promoter
+    @promoter = Promoter.find(params[:id])
   end
 end

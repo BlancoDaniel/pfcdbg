@@ -1,3 +1,11 @@
-<h2><%= t('.title') %></h2>
 
-<%= render 'form' %>
+<div class="container">
+  <div class="row">
+    <div class="event-form">
+      <div class="form-header">
+        <h1><%= t('.title') %></h1>
+      </div>
+      <%= render "form", event: @event %>
+    </div>
+  </div>
+</div>
