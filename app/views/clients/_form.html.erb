@@ -1,33 +1,44 @@
-<%= form_with(model: client) do |form| %>
-  <%= render partial: 'shared/form_errors', locals: { model: client } %>
-
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+<section>
+  <div class="container py-5">
+    <div class="row d-flex justify-content-center">
+      <div class="col col-md-8">
+        <div class="card" style="border-radius: 1rem;">
+          <div class="row g-0">
+            <div class="d-flex align-items-center">
+              <div class="card-body p-4 p-lg-5 text-black session-form">
+                <%= form_with(model: client) do |form| %>
+                  <h4 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;"><%= t(".title") %></h4>
+                  <div class="form-outline mb-4">
+                    <%= form.label :name, class: "form-label" %>
+                    <%= form.text_field :name, class: "form-control" %>
+                  </div>
+                  <div class="form-outline mb-4">
+                    <%= form.label :surname, class: "form-label" %>
+                    <%= form.text_field :surname, class: "form-control" %>
+                  </div>
+                  <div class="form-outline mb-4">
+                    <%= form.label :address, class: "form-label" %>
+                    <%= form.text_field :address, class: "form-control" %>
+                  </div>
+                  <div class="form-outline mb-4">
+                    <%= form.label :phone_number, class: "form-label" %>
+                    <%= form.phone_field :phone_number, class: "form-control" %>
+                  </div>
+                  <div class="form-outline mb-4">
+                    <%= form.label :nif, class: "form-label" %>
+                    <%= form.text_field :nif, class: "form-control" %>
+                  </div>
+                  <%= render partial: 'shared/form_errors', locals: { model: client } %>
+                  <div class="pt-1 mb-4 d-flex justify-content-center">
+                    <%= form.submit "Finalizar registro", class: "btn" %>
+                  </div>
+                  <%= link_to ('Registrarse como Promotor'), new_promoter_path, class: "text-decoration-none" %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div>
-    <%= form.label :surname, style: "display: block" %>
-    <%= form.text_field :surname %>
-  </div>
-  <div>
-    <%= form.label :address, style: "display: block" %>
-    <%= form.text_field :address %>
-  </div>
-  <div>
-    <%= form.label :phone_number, style: "display: block" %>
-    <%= form.phone_field :phone_number %>
-  </div>
-  <div>
-    <%= form.label :nif, style: "display: block" %>
-    <%= form.text_field :nif %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-
-  <div>
-    <%= link_to ('Registrarse como Promotor'), new_promoter_path %>
-  </div>
-
-<% end %>
+</section>
