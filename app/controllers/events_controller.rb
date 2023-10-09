@@ -1,7 +1,8 @@
 class EventsController < ApplicationController
 
   def index
-    @events = Event.all.load_async
+    @categories = Category.order(name: :asc).load_async
+    @events = FindEvents.new.call(event_params_index).load_async
   end
 
   def show
@@ -53,6 +54,9 @@ class EventsController < ApplicationController
     params.require(:event).permit(:name,:description,:price,:date,:location,:ticket_quantity,:category_id,:poster)
   end
 
+  def event_params_index
+    params.permit(:category_id)
+  end
   def event
     @event = Event.find(params[:id])
   end
