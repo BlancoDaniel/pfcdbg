@@ -68,10 +68,14 @@ body{
 .event-form .form-control::placeholder {
   color: #1011134C;
 }
-.event-form .btn{
-  background-color: white;
-}
-.event-form .btn:hover{
-  color: black;
+
+.event-form .btn,
+.session-form .btn {
   background-color: #f5f5f5;
+}
+
+.event-form .btn:hover,
+.session-form .btn:hover {
+  color: black;
+  background-color: #bebebe;
 }
