@@ -30,10 +30,10 @@ es:
     new:
       title: 'Añadir categoría'
   clients:
-    new:
+    form:
       title: 'Nuevo cliente'
   promoters:
-    new:
+    form:
       title: 'Nuevo Promotor'
   events:
     event:

@@ -3,15 +3,119 @@
 one:
   name: MyString
   location: MyString
-  description: MyText
+  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum condimentum velit id erat ultrices, eu ultrices est congue. In ut urna nec justo efficitur posuere sed id purus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus at aliquet metus. Ut suscipit, mi non lacinia tristique, mi velit volutpat orci, at fermentum risus justo nec tellus. Nunc rutrum venenatis augue. Vivamus eget interdum odio. Cras auctor, velit sit amet feugiat varius, neque metus consectetur elit, eu luctus quam purus eget ante. Duis id consectetur velit, id egestas justo. Vestibulum eu malesuada quam. Fusce vel eros a odio rhoncus facilisis in vel dolor.
   date: 2023-09-29 12:45:52
   ticket_quantity: 1
   price: 9.99
+  category: metal
+  promoter_id: 1
 
 two:
   name: MyString
   location: MyString
-  description: MyText
+  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum condimentum velit id erat ultrices, eu ultrices est congue. In ut urna nec justo efficitur posuere sed id purus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus at aliquet metus. Ut suscipit, mi non lacinia tristique, mi velit volutpat orci, at fermentum risus justo nec tellus. Nunc rutrum venenatis augue. Vivamus eget interdum odio. Cras auctor, velit sit amet feugiat varius, neque metus consectetur elit, eu luctus quam purus eget ante. Duis id consectetur velit, id egestas justo. Vestibulum eu malesuada quam. Fusce vel eros a odio rhoncus facilisis in vel dolor.
   date: 2023-09-29 12:45:52
   ticket_quantity: 1
   price: 9.99
+  category: folk
+  promoter_id: 1
+
+twentyone:
+  name: Event 21
+  location: Location 21
+  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum condimentum velit id erat ultrices, eu ultrices est congue. In ut urna nec justo efficitur posuere sed id purus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus at aliquet metus. Ut suscipit, mi non lacinia tristique, mi velit volutpat orci, at fermentum risus justo nec tellus. Nunc rutrum venenatis augue. Vivamus eget interdum odio. Cras auctor, velit sit amet feugiat varius, neque metus consectetur elit, eu luctus quam purus eget ante. Duis id consectetur velit, id egestas justo. Vestibulum eu malesuada quam. Fusce vel eros a odio rhoncus facilisis in vel dolor.
+  date: 2023-10-10 18:00:00
+  ticket_quantity: 80
+  price: 24.99
+  category: pop
+  promoter_id: 1
+
+twentytwo:
+  name: Event 22
+  location: Location 22
+  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum condimentum velit id erat ultrices, eu ultrices est congue. In ut urna nec justo efficitur posuere sed id purus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus at aliquet metus. Ut suscipit, mi non lacinia tristique, mi velit volutpat orci, at fermentum risus justo nec tellus. Nunc rutrum venenatis augue. Vivamus eget interdum odio. Cras auctor, velit sit amet feugiat varius, neque metus consectetur elit, eu luctus quam purus eget ante. Duis id consectetur velit, id egestas justo. Vestibulum eu malesuada quam. Fusce vel eros a odio rhoncus facilisis in vel dolor.
+  date: 2023-10-15 19:30:00
+  ticket_quantity: 60
+  price: 19.99
+  category: hip-hop
+  promoter_id: 2
+
+twentythree:
+  name: Event 23
+  location: Location 23
+  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum condimentum velit id erat ultrices, eu ultrices est congue. In ut urna nec justo efficitur posuere sed id purus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus at aliquet metus. Ut suscipit, mi non lacinia tristique, mi velit volutpat orci, at fermentum risus justo nec tellus. Nunc rutrum venenatis augue. Vivamus eget interdum odio. Cras auctor, velit sit amet feugiat varius, neque metus consectetur elit, eu luctus quam purus eget ante. Duis id consectetur velit, id egestas justo. Vestibulum eu malesuada quam. Fusce vel eros a odio rhoncus facilisis in vel dolor.
+  date: 2023-10-20 20:45:00
+  ticket_quantity: 70
+  price: 22.99
+  category: classical
+  promoter_id: 2
+
+twentyfour:
+  name: Event 24
+  location: Location 24
+  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum condimentum velit id erat ultrices, eu ultrices est congue. In ut urna nec justo efficitur posuere sed id purus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus at aliquet metus. Ut suscipit, mi non lacinia tristique, mi velit volutpat orci, at fermentum risus justo nec tellus. Nunc rutrum venenatis augue. Vivamus eget interdum odio. Cras auctor, velit sit amet feugiat varius, neque metus consectetur elit, eu luctus quam purus eget ante. Duis id consectetur velit, id egestas justo. Vestibulum eu malesuada quam. Fusce vel eros a odio rhoncus facilisis in vel dolor.
+  date: 2023-10-25 21:15:00
+  ticket_quantity: 90
+  price: 18.99
+  category: blues
+  promoter_id: 1
+
+twentyfive:
+  name: Event 25
+  location: Location 25
+  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum condimentum velit id erat ultrices, eu ultrices est congue. In ut urna nec justo efficitur posuere sed id purus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus at aliquet metus. Ut suscipit, mi non lacinia tristique, mi velit volutpat orci, at fermentum risus justo nec tellus. Nunc rutrum venenatis augue. Vivamus eget interdum odio. Cras auctor, velit sit amet feugiat varius, neque metus consectetur elit, eu luctus quam purus eget ante. Duis id consectetur velit, id egestas justo. Vestibulum eu malesuada quam. Fusce vel eros a odio rhoncus facilisis in vel dolor.
+  date: 2023-10-30 14:00:00
+  ticket_quantity: 85
+  price: 27.99
+  category: country
+  promoter_id: 2
+
+twentysix:
+  name: Event 26
+  location: Location 26
+  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum condimentum velit id erat ultrices, eu ultrices est congue. In ut urna nec justo efficitur posuere sed id purus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus at aliquet metus. Ut suscipit, mi non lacinia tristique, mi velit volutpat orci, at fermentum risus justo nec tellus. Nunc rutrum venenatis augue. Vivamus eget interdum odio. Cras auctor, velit sit amet feugiat varius, neque metus consectetur elit, eu luctus quam purus eget ante. Duis id consectetur velit, id egestas justo. Vestibulum eu malesuada quam. Fusce vel eros a odio rhoncus facilisis in vel dolor.
+  date: 2023-11-05 16:30:00
+  ticket_quantity: 75
+  price: 21.99
+  category: reggae
+  promoter_id: 2
+
+twentyseven:
+  name: Event 27
+  location: Location 27
+  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum condimentum velit id erat ultrices, eu ultrices est congue. In ut urna nec justo efficitur posuere sed id purus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus at aliquet metus. Ut suscipit, mi non lacinia tristique, mi velit volutpat orci, at fermentum risus justo nec tellus. Nunc rutrum venenatis augue. Vivamus eget interdum odio. Cras auctor, velit sit amet feugiat varius, neque metus consectetur elit, eu luctus quam purus eget ante. Duis id consectetur velit, id egestas justo. Vestibulum eu malesuada quam. Fusce vel eros a odio rhoncus facilisis in vel dolor.
+  date: 2023-11-10 17:45:00
+  ticket_quantity: 70
+  price: 23.99
+  category: punk
+  promoter_id: 1
+
+twentyeight:
+  name: Event 28
+  location: Location 28
+  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum condimentum velit id erat ultrices, eu ultrices est congue. In ut urna nec justo efficitur posuere sed id purus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus at aliquet metus. Ut suscipit, mi non lacinia tristique, mi velit volutpat orci, at fermentum risus justo nec tellus. Nunc rutrum venenatis augue. Vivamus eget interdum odio. Cras auctor, velit sit amet feugiat varius, neque metus consectetur elit, eu luctus quam purus eget ante. Duis id consectetur velit, id egestas justo. Vestibulum eu malesuada quam. Fusce vel eros a odio rhoncus facilisis in vel dolor.
+  date: 2023-11-15 22:00:00
+  ticket_quantity: 55
+  price: 29.99
+  category: indie
+  promoter_id: 1
+
+twentynine:
+  name: Event 29
+  location: Location 29
+  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum condimentum velit id erat ultrices, eu ultrices est congue. In ut urna nec justo efficitur posuere sed id purus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus at aliquet metus. Ut suscipit, mi non lacinia tristique, mi velit volutpat orci, at fermentum risus justo nec tellus. Nunc rutrum venenatis augue. Vivamus eget interdum odio. Cras auctor, velit sit amet feugiat varius, neque metus consectetur elit, eu luctus quam purus eget ante. Duis id consectetur velit, id egestas justo. Vestibulum eu malesuada quam. Fusce vel eros a odio rhoncus facilisis in vel dolor.
+  date: 2023-11-20 19:00:00
+  ticket_quantity: 65
+  price: 16.99
+  category: electronic
+  promoter_id: 2
+
+thirty:
+  name: Event 30
+  location: Location 30
+  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum condimentum velit id erat ultrices, eu ultrices est congue. In ut urna nec justo efficitur posuere sed id purus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus at aliquet metus. Ut suscipit, mi non lacinia tristique, mi velit volutpat orci, at fermentum risus justo nec tellus. Nunc rutrum venenatis augue. Vivamus eget interdum odio. Cras auctor, velit sit amet feugiat varius, neque metus consectetur elit, eu luctus quam purus eget ante. Duis id consectetur velit, id egestas justo. Vestibulum eu malesuada quam. Fusce vel eros a odio rhoncus facilisis in vel dolor.
+  date: 2023-11-25 20:30:00
+  ticket_quantity: 60
+  price: 26.99
+  category: folk
+  promoter_id: 2
