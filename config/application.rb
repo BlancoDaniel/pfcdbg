@@ -15,5 +15,7 @@ module Pfcdbg
     config.i18n.default_locale = Settings.locales.default
     config.i18n.available_locales = Settings.locales.available
 
+    #allow multiquery
+    config.active_record.async_query_executor = :global_thread_pool
   end
 end
