@@ -1,0 +1,36 @@
+<section class="intro">
+  <div class="bg-image h-100">
+    <div class="mask d-flex align-items-center h-100">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12">
+            <h2 class="mt-4 ">Resumen de la compra</h2>
+            <div class="card">
+              <div class="card-body p-0">
+                <table class="table table-striped mb-0">
+                  <thead>
+                  <tr>
+                    <th scope="col">Producto</th>
+                    <th scope="col">Precio Unitario</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Total</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td><%= @event.name %></td>
+                    <td><%= number_to_currency(@event.price) %></td>
+                    <td><%= @inputQuantity %></td>
+                    <td><%= @total %></td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+              <%= render partial: 'pay/stripe/checkout_button', locals: { session: @checkout_session, title: "Comprar", class: 'btn' } %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
