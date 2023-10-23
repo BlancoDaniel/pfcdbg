@@ -4,7 +4,7 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-12">
-            <h2 class="mt-4 ">Resumen de la compra</h2>
+            <h2 class="mt-4 ">Resumen de la compra </h2><span>Tiene 15 minutos para finalizar la compra y realizar el pago</span>
             <div class="card">
               <div class="card-body p-0">
                 <table class="table table-striped mb-0">
@@ -27,6 +27,12 @@
                 </table>
               </div>
               <%= render partial: 'pay/stripe/checkout_button', locals: { session: @checkout_session, title: "Comprar", class: 'btn' } %>
+
+              <%= button_to 'Cancelar compra', destroy_checkout_session_path(@event.id, input_quantity: @inputQuantity), class: 'btn btn-danger', data: {
+                  disable_with: "Please wait...",
+                  turbo_method: :post,
+                  turbo_confirm: 'Si pulsa aceptar se cancelará la compra',
+              }%>
             </div>
           </div>
         </div>
