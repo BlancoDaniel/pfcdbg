@@ -1,7 +1,8 @@
 class CheckoutsController < ApplicationController
   
   def show
-    event
+    return redirect_to new_user_session_path, alert: "Debe registrarse o iniciar sesión" if !current_user
+    event 
     user_id = current_user.id
     @inputQuantity = params[:inputQuantity].to_i
   
