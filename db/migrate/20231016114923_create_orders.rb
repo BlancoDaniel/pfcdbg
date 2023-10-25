@@ -9,7 +9,6 @@ class CreateOrders < ActiveRecord::Migration[7.0]
 
       t.timestamps
     end
-    add_reference :orders, :category, null: false, foreign_key: true
     add_reference :orders, :client, null: false, foreign_key: true
   end
 end

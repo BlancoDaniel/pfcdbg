@@ -37,17 +37,17 @@ class CheckoutsController < ApplicationController
           },
           quantity: @inputQuantity
         }],
-        success_url: checkout_url(id: event.id, qty: @inputQuantity),
+        success_url: "http://127.0.0.1:3000/orders/new?event_id=#{event.id}",
         cancel_url: 'http://127.0.0.1:3000/events'
       )
       session[:checkout_session_id] = @checkout_session.id
       checkout_session_id = session[:checkout_session_id]
 
-      DestroyCheckoutSessionJob.set(wait: 15.minutes).perform_later(event, @inputQuantity, checkout_session_id)
+      DestroyCheckoutSessionJob.set(wait: 1.minutes).perform_later(event, @inputQuantity, checkout_session_id)
 
 
       cached_data = { event: event, total: @total, checkout_session: @checkout_session, input_quantity: @inputQuantity}
-      Rails.cache.write(cache_key, cached_data, expires_in: 15.minutes)
+      Rails.cache.write(cache_key, cached_data, expires_in: 1.minutes)
     end
   end
 
@@ -65,9 +65,6 @@ class CheckoutsController < ApplicationController
 
   end
 
-  def success
-
-  end
   private
 
   def event

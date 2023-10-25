@@ -5,9 +5,8 @@ Rails.application.routes.draw do
   resources :clients, only: [:new, :create]
   resources :promoters, only: [:show, :new, :create], path: '/promoter', param: :id
   resources :events
-  resources :orders
+  resources :orders, only: [:show, :new]
   get "checkout", to: "checkouts#show"
-  get "checkout/success", to: "checkouts#success"
   post 'checkouts/:id/destroy_checkout_session', to: 'checkouts#destroy_checkout_session', as: 'destroy_checkout_session'
 
 
