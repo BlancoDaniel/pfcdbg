@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   resources :orders
   get "checkout", to: "checkouts#show"
   get "checkout/success", to: "checkouts#success"
+  post 'checkouts/:id/destroy_checkout_session', to: 'checkouts#destroy_checkout_session', as: 'destroy_checkout_session'
+
+
 
 
 end
