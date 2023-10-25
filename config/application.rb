@@ -11,6 +11,7 @@ module Pfcdbg
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
+    config.action_mailer.default_url_options = { host: "http://localhost:3000" }
 
     config.i18n.default_locale = Settings.locales.default
     config.i18n.available_locales = Settings.locales.available

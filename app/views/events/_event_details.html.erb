@@ -8,13 +8,14 @@
     <p class="text-justify">
       <%= event.description %>
     </p>
-    <div class="fs-5 d-flex">
-      <p class="me-3"><%= event.price %>€</p>
-      <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 5rem">
-      <button class="btn btn-outline-dark" type="button">
-        Add to cart
-      </button>
-    </div>
+    <%= form_tag checkout_path, method: :get do %>
+      <div class="fs-5 d-flex col-sm-6">
+        <p class="me-3"><%= event.price %>€</p>
+        <%= number_field_tag :inputQuantity, 1, class: "form-control text-center me-3", max: 8, min: 1 %>
+        <%= hidden_field_tag :id, @event.id %>
+        <%= submit_tag "Comprar", class: "btn" %>
+      </div>
+    <% end %>
   </div>
 </div>
 

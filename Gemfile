@@ -88,3 +88,7 @@ end
 gem "pundit", "~> 2.3"
 
 gem "view_component", "~> 3.6"
+
+
+gem "stripe", "~> 9.4"
+gem "pay", "~> 6.8"

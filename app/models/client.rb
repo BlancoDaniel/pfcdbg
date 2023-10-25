@@ -1,5 +1,7 @@
 class Client < ApplicationRecord
   belongs_to :user
+  has_many :orders, dependent: :restrict_with_exception
+
   validates :name,
             :surname,
             :address,
