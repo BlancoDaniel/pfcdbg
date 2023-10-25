@@ -37,7 +37,7 @@ class CheckoutsController < ApplicationController
           },
           quantity: @inputQuantity
         }],
-        success_url: "http://127.0.0.1:3000/checkout/success?id=#{event.id}&",
+        success_url: "http://127.0.0.1:3000/orders/new?event_id=#{event.id}",
         cancel_url: 'http://127.0.0.1:3000/events'
       )
       session[:checkout_session_id] = @checkout_session.id
