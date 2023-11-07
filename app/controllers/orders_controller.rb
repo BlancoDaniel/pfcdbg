@@ -3,6 +3,7 @@ class OrdersController < ApplicationController
     def show
         order
         @event = Event.find(order.event_id)
+        @tickets = tickets
     end
 
     def new
@@ -11,6 +12,13 @@ class OrdersController < ApplicationController
 
         create_order_service = CreateOrderService.new(params[:session_id], event, current_client)
         @order = create_order_service.create_order
+
+        create_ticket_service = CreateTicketService.new(event, @order, current_client)
+
+        @order.quantity.times do
+            @ticket = create_ticket_service.create_ticket
+        end
+
     end
       
 
@@ -26,7 +34,7 @@ class OrdersController < ApplicationController
     end
 
     def current_client
-        if current_user # Verifica si el usuario está autenticado
+        if current_user
           @current_client ||= Client.find_by(user_id: current_user.id)
         end
     end
@@ -34,4 +42,9 @@ class OrdersController < ApplicationController
     def order
         @order = Order.find(params[:id])
     end
+
+    def tickets
+        @tickets = Ticket.where(order_id: params[:id]).to_a
+    end
+      
 end
