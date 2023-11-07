@@ -11,6 +11,29 @@ class FindEvents
 
   end
 
+  def upcoming_events(limit = 8)
+    events
+      .where('date >= ?', Time.now)
+      .order(date: :asc)
+      .limit(limit)
+  end
+
+  def latest_events(limit = 8)
+    @events
+      .where('date >= ?', Time.now)
+      .order(created_at: :desc)
+      .limit(limit)
+  end
+
+  def latest_tickets(limit = 8)
+    @events
+      .where('date >= ?', Time.now)
+      .where('ticket_quantity > 0')
+      .where('ticket_quantity < 50')
+      .order(created_at: :desc)
+      .limit(limit)
+  end
+
   private
 
   def initial_scope
