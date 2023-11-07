@@ -1,0 +1,22 @@
+<div class="album py-5 bg-body-tertiary">
+  <div class="container">
+    <h1>Eventos</h1>
+    <%= link_to  'Ver todos', events_path, class: "btn"%>
+    <h5>ÚLTIMAS ENTRADAS DISPONIBLES</h5>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-3">
+    <%= render partial: 'events/event', collection: @latest_tickets %>
+    </div> <br><br>
+    <h5>Próximos eventos</h5>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-3">
+    <%= render partial: 'events/event', collection: @events %>
+    </div> <br><br>
+    <h5>Últimos eventos añadidos</h5>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-3">
+    <%= render partial: 'events/event', collection: @latest_events %>
+    </div>
+  </div>
+</div>
+
+
+
+

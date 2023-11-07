@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'main#home'
+  root 'main#index'
   devise_for :users, controllers: { registrations: "registrations" }
   resources :categories, except: :show
   resources :clients, only: [:new, :create]
