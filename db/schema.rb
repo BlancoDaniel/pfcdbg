@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_25_100819) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_07_102856) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -83,11 +83,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_25_100819) do
     t.string "status", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "category_id", null: false
     t.bigint "client_id", null: false
     t.bigint "event_id", null: false
     t.string "session_id"
-    t.index ["category_id"], name: "index_orders_on_category_id"
     t.index ["client_id"], name: "index_orders_on_client_id"
     t.index ["event_id"], name: "index_orders_on_event_id"
   end
@@ -199,6 +197,18 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_25_100819) do
     t.index ["resource_type", "resource_id"], name: "index_roles_on_resource"
   end
 
+  create_table "tickets", force: :cascade do |t|
+    t.string "code"
+    t.bigint "event_id", null: false
+    t.bigint "order_id", null: false
+    t.bigint "client_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["client_id"], name: "index_tickets_on_client_id"
+    t.index ["event_id"], name: "index_tickets_on_event_id"
+    t.index ["order_id"], name: "index_tickets_on_order_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -226,7 +236,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_25_100819) do
   add_foreign_key "clients", "users"
   add_foreign_key "events", "categories"
   add_foreign_key "events", "promoters"
-  add_foreign_key "orders", "categories"
   add_foreign_key "orders", "clients"
   add_foreign_key "orders", "events"
   add_foreign_key "pay_charges", "pay_customers", column: "customer_id"
@@ -234,4 +243,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_25_100819) do
   add_foreign_key "pay_payment_methods", "pay_customers", column: "customer_id"
   add_foreign_key "pay_subscriptions", "pay_customers", column: "customer_id"
   add_foreign_key "promoters", "users"
+  add_foreign_key "tickets", "clients"
+  add_foreign_key "tickets", "events"
+  add_foreign_key "tickets", "orders"
 end
