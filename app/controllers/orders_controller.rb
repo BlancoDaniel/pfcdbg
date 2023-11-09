@@ -17,6 +17,8 @@ class OrdersController < ApplicationController
 
         @order.quantity.times do
             @ticket = create_ticket_service.create_ticket
+            qr_ticket_service = QrTicketService.new(@ticket)
+            qr_ticket_service.generate_qr
         end
 
     end

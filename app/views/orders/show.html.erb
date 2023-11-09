@@ -3,3 +3,13 @@
 <p>Número de entradas: <%=@order.quantity%></p>
 <p>Precio por entrada: <%=@order.unit_amount%></p>
 <p>Precio total: <%=@order.total%></p>
+<ul>
+  <% @tickets.each do |ticket| %>
+    <li>
+      Código: <%= ticket.code %><br>
+      Cliente ID: <%= ticket.client_id %><br>
+      Evento ID: <%= ticket.event_id %><br>
+      <%= image_tag ticket.qrcode.attached? ? ticket.qrcode : 'placeholder.jpg', class: "img-fluid rounded" %>
+    </li>
+  <% end %>
+</ul>

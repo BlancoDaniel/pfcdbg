@@ -4,3 +4,4 @@
 <p>Número de entradas: <%=@order.quantity%></p>
 <p>Precio por entrada: <%=@order.unit_amount%></p>
 <p>Precio total: <%=@order.total%></p>
+<%= link_to ('Ver entradas'), order_path(@order), class: "btn"%>
