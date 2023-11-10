@@ -95,3 +95,7 @@ gem "stripe", "~> 9.4"
 gem "pay", "~> 6.8"
 
 gem "rqrcode", "~> 2.0"
+
+gem 'wicked_pdf'
+
+gem 'wkhtmltopdf-binary'

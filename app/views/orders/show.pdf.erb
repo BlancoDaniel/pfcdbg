@@ -1,0 +1,41 @@
+<head>
+  <title><%=@event.name%></title>
+  <%= wicked_pdf_stylesheet_link_tag 'pdf' %>
+</head>
+<body>
+    <h1><%=@event.name%></h1>
+
+    <div class="poster-container">
+        <% poster = if @event.poster.attached?
+            "data:image/jpg;base64,#{Base64.strict_encode64(@event.poster.download)}"
+            else
+            "data:image/jpg;base64,#{Base64.strict_encode64(File.read(Rails.root.join('app', 'assets', 'images', 'placeholder.jpg')))}"
+            end %>
+
+    <%= image_tag poster, class: "poster-pdf" %>
+    </div>
+
+    <p>Referencia de compra: <%=@order.id%></p>
+    <p>Precio por entrada: <%=@order.unit_amount%>€ Número de entradas: <%=@order.quantity%> Precio total: <%=@order.total%>€</p>
+    <hr>
+    <div>
+        <table class="table">
+        <% @tickets.each_slice(3) do |ticket_group| %>
+            <tr>
+            <% ticket_group.each do |ticket| %>
+                <td>
+                <% qrcode = if ticket.qrcode.attached?
+                                "data:image/png;base64,#{Base64.strict_encode64(ticket.qrcode.download)}"
+                            else
+                                "data:image/png;base64,#{Base64.strict_encode64(File.read(Rails.root.join('app', 'assets', 'images', 'placeholder.jpg')))}"
+                            end %>
+
+                <%= image_tag qrcode %>
+                Código: <%= ticket.code %>
+                </td>
+            <% end %>
+            </tr>
+        <% end %>
+        </table>
+    </div>
+</body>

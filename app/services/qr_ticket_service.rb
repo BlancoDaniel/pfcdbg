@@ -18,9 +18,8 @@ class QrTicketService
             module_px_size: 6,
             resize_exactly_to: false,
             resize_gte_to: false,
-            size: 120
+            size: 240
         )
-        byebug
         @ticket.qrcode.attach(io: StringIO.new(@png.to_s), filename: filename, content_type: 'image/png')
 
     end    
