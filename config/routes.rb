@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'main#index'
   devise_for :users, controllers: { registrations: "registrations" }
   resources :categories, except: :show
-  resources :clients, only: [:new, :create]
+  resources :clients, only: [:new, :create, :show], path: '/client', param: :id
   resources :promoters, only: [:show, :new, :create], path: '/promoter', param: :id
   resources :events
   resources :orders, only: [:show, :new]

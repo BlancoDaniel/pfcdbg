@@ -1,0 +1,21 @@
+<% @orders.each do |order| %>
+    <% past_event = @past_events.find { |e| e.id == order.event_id } %>
+    <% if past_event %>
+        <div class="col">
+            <div class="d-flex flex-column w-100">
+                <div class="d-flex flex-sm-row flex-wrap gap-2">
+                <%= link_to order_path(order.id), class: 'card shadow-sm text-decoration-none' do %>
+                    <div class="image-container" style="max-height: 200px; overflow: hidden;">
+                    <%= image_tag past_event.poster.attached? ? past_event.poster : 'placeholder.jpg', class: "card-img-top" %>
+                    </div>
+                    <div class="card-body">
+                    <h2><%= past_event.name %></h2>
+                    <p class="card-text"><%= past_event.description.truncate(100) %></p>
+                    <p class="card-text"><%= past_event.date.strftime("%d %B %Y %H:%M") %></p>
+                    </div>
+                <% end %>
+                </div>
+            </div>
+        </div>
+    <% end %>
+<% end %>
