@@ -1,15 +1,32 @@
-<p>Número de compra: <%=@order.id%></p>
-<p>Evento: <%=@event.name%></p>
-<p>Número de entradas: <%=@order.quantity%></p>
-<p>Precio por entrada: <%=@order.unit_amount%></p>
-<p>Precio total: <%=@order.total%></p>
-<ul>
-  <% @tickets.each do |ticket| %>
-    <li>
-      Código: <%= ticket.code %><br>
-      Cliente ID: <%= ticket.client_id %><br>
-      Evento ID: <%= ticket.event_id %><br>
-      <%= image_tag ticket.qrcode.attached? ? ticket.qrcode : 'placeholder.jpg', class: "img-fluid rounded" %>
-    </li>
-  <% end %>
-</ul>
+<div class="container">
+  <div class="row">
+    <div class="event-form">
+      <div class="form-header">
+        <h1><%=@event.name%></h1>
+      </div>
+      <p>Referencia de compra: <%=@order.id%></p>
+      <p>Precio por entrada: <%=@order.unit_amount%>€</p> Número de entradas: <%=@order.quantity%></p> Precio total: <%=@order.total%>€</p>
+      <hr>
+      <div class="container">
+        <div class="row">
+          <% @tickets.each do |ticket| %>
+            <div class="col-sm-6 col-md-4">
+              <% qrcode = if ticket.qrcode.attached?
+                  "data:image/png;base64,#{Base64.strict_encode64(ticket.qrcode.download)}"
+              else
+                  "data:image/png;base64,#{Base64.strict_encode64(File.read(Rails.root.join('app', 'assets', 'images', 'placeholder.jpg')))}"
+              end %>
+
+              <%= image_tag qrcode, class:"qrcode" %>
+              <p>Código: <%= ticket.code %></p>
+            </div>
+          <% end %>
+         <%= link_to ('Ver entradas en PDF'), order_path(@order, format: :pdf), class: "btn", target: '_blank'%>
+         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

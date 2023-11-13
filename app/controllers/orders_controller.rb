@@ -4,6 +4,13 @@ class OrdersController < ApplicationController
         order
         @event = Event.find(order.event_id)
         @tickets = tickets
+
+        respond_to do |format|
+            format.html
+            format.pdf do
+              render pdf: "#{order.id}_#{@event.id}", template: "orders/show", encoding: 'UTF-8'
+            end
+        end
     end
 
     def new
