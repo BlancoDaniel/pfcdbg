@@ -63,3 +63,13 @@ body{
   color: black;
   background-color: #bebebe;
 }
+
+.qrcode{
+  max-width: 100%;
+}
+
+@media (max-width: 576px) {
+  .qrcode {
+    max-width: 130%;
+  }
+}
