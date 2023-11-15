@@ -7,6 +7,7 @@ class ClientsController < ApplicationController
 
   def show
     client
+    authorize @client
     @orders = Order.where(client: client.id).load_async
 
     event_ids = @orders.pluck(:event_id).uniq
