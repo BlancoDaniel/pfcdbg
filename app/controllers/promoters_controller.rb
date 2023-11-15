@@ -7,7 +7,7 @@ class PromotersController < ApplicationController
 
   def show
     promoter
-    @events = Event.where(promoter_id: @promoter.id).load_async
+    @events = Event.where(promoter_id: promoter.id).load_async
   end
 
   def edit

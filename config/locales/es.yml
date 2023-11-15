@@ -12,6 +12,7 @@ es:
       logout: 'Desconectarse'
       new: 'Nuevo evento'
       my_events: 'Mis eventos'
+      my_tickets: 'Mis entradas'
   categories:
     category:
       edit: 'Editar'

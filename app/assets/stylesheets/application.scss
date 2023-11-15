@@ -68,6 +68,12 @@ body{
   max-width: 100%;
 }
 
+footer {
+  position: absolute;
+  width: 100%;
+}
+
+
 @media (max-width: 576px) {
   .qrcode {
     max-width: 130%;
