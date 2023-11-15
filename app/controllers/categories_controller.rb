@@ -11,7 +11,7 @@ class CategoriesController < ApplicationController
   end
 
   def edit
-    find_category
+    category
     authorize @category
   end
 
@@ -25,7 +25,7 @@ class CategoriesController < ApplicationController
 
 
   def update
-    find_category
+    category
     authorize @category
       return redirect_to categories_url, notice: t(".updated") if @category.update(category_params)
 
@@ -34,7 +34,7 @@ class CategoriesController < ApplicationController
 
 
   def destroy
-    find_category
+    category
     authorize @category
     @category.destroy
 
@@ -43,7 +43,7 @@ class CategoriesController < ApplicationController
   end
 
   private
-  def find_category
+  def category
     @category = Category.find(params[:id])
   end
 

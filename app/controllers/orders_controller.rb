@@ -2,6 +2,7 @@ class OrdersController < ApplicationController
 
     def show
         order
+        authorize @order
         @event = Event.find(order.event_id)
         @tickets = tickets
 
