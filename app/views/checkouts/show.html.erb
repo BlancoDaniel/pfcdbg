@@ -27,15 +27,14 @@
                 </table>
               </div>
               <%= render partial: 'pay/stripe/checkout_button', locals: { session: @checkout_session, title: "Comprar", class: 'btn' } %>
-
-              <%= button_to 'Cancelar compra', destroy_checkout_session_path(@event.id, input_quantity: @inputQuantity), class: 'btn btn-danger', data: {
-                  disable_with: "Please wait...",
-                  turbo_method: :post,
-                  turbo_confirm: 'Si pulsa aceptar se cancelará la compra',
-              }%>
             </div>
           </div>
-        </div>
+            <%= button_to 'Cancelar compra', destroy_checkout_session_path(@event.id, input_quantity: @inputQuantity), class: 'btn btn-danger mt-3 mb-3', data: {
+              disable_with: "Please wait...",
+              turbo_method: :post,
+              turbo_confirm: 'Si pulsa aceptar se cancelará la compra',
+            }%>
+          </div>
       </div>
     </div>
   </div>
