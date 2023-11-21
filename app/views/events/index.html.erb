@@ -1,5 +1,13 @@
 <div class="album py-5 bg-body-tertiary">
   <div class="container">
+    <%= form_with url: events_path, method: :get do |form|%>
+      <div class="flex">
+        <%=form.text_field :query_text, placeholder: 'Buscar evento',onChange: 'this.form.requestSubmit()', value: params[:query_text] , class:"col-3 mx-3 rounded"%>
+        <%=form.text_field :min_price, placeholder: 'Precio mínimo',onChange: 'this.form.requestSubmit()', value: params[:min_price], class:"col-3 mx-3 rounded"  %>
+        <%=form.text_field :max_price, placeholder: 'Precio máximo',onChange: 'this.form.requestSubmit()', value: params[:max_price], class:"col-3 mx-3 rounded"   %>
+      </div>
+    <%end %>
+
     <div class="flex overflow-x-scroll gap-2 my-4">
       <%= render(CategoryComponent.with_collection(@categories)) %>
     </div>
