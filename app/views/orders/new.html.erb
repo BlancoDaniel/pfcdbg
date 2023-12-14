@@ -1,8 +1,30 @@
-<h1>Compra realizada con éxito</h1>
-<p>Número de compra: <%=@order.id%></p>
-<p>Evento: <%=@event.name%></p>
-<p>Número de entradas: <%=@order.quantity%></p>
-<p>Precio por entrada: <%=@order.unit_amount%></p>
-<p>Precio total: <%=@order.total%></p>
-<%= link_to ('Ver entradas'), order_path(@order), class: "btn"%>
-<%= link_to ('Ver entradas en PDF'), order_path(@order, format: :pdf), class: "btn", target: '_blank'%>
+<div class="container py-5">
+    <div class="row d-flex justify-content-center">
+        <div class="col col-md-8">
+            <div class="card" style="border-radius: 1rem;">
+                <div class="row g-0">
+                    <div class="d-flex align-items-center">
+                        <div class="card-body p-4 p-lg-5 text-black session-form">
+                            <div class="event-form">
+                                <h1>Compra realizada con éxito</h1>
+                                <div class="form-header">
+                                    <h3><%=@event.name%></h3>
+                                </div>
+                                <p>Número de compra: <%=@order.id%></p>
+                                <p>Número de entradas: <%=@order.quantity%></p>
+                                <p>Precio por entrada: <%=@order.unit_amount%></p>
+                                <p>Precio total: <%=@order.total%></p>
+                                <%= link_to ('Ver entradas'), order_path(@order), class: "btn"%>
+                                <%= link_to ('Ver entradas en PDF'), order_path(@order, format: :pdf), class: "btn", target: '_blank'%>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

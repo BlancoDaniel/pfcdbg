@@ -1,0 +1,24 @@
+<!-- app/views/user_mailer/registration_success_email.html.erb -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+</head>
+<body>
+  <h1>¡Bienvenido a nuestra aplicación!</h1>
+
+  <p>Hola <%= @promotername %>,</p>
+
+  <p>Te damos la bienvenida a nuestra tienda. Tu registro como promotor se ha realizado correctamente.</p>
+
+  <p>A continuación, encontrarás algunos detalles de tu perfil:</p>
+
+  <ul>
+    <li><strong>Nombre:</strong> <%= @promoter.name %></li>
+    <li><strong>Dirección:</strong> <%= @promoter.address %></li>
+    <li><strong>Teléfono:</strong> <%= @promoter.phone_number %></li>
+  </ul>
+
+  <p>¡Gracias por unirte a nosotros!</p>
+</body>
+</html>

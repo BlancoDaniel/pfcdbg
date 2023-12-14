@@ -1,25 +1,3 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  name: MyString
-  location: MyString
-  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum condimentum velit id erat ultrices, eu ultrices est congue. In ut urna nec justo efficitur posuere sed id purus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus at aliquet metus. Ut suscipit, mi non lacinia tristique, mi velit volutpat orci, at fermentum risus justo nec tellus. Nunc rutrum venenatis augue. Vivamus eget interdum odio. Cras auctor, velit sit amet feugiat varius, neque metus consectetur elit, eu luctus quam purus eget ante. Duis id consectetur velit, id egestas justo. Vestibulum eu malesuada quam. Fusce vel eros a odio rhoncus facilisis in vel dolor.
-  date: 2023-09-29 12:45:52
-  ticket_quantity: 1
-  price: 9.99
-  category: metal
-  promoter_id: 1
-
-two:
-  name: MyString
-  location: MyString
-  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum condimentum velit id erat ultrices, eu ultrices est congue. In ut urna nec justo efficitur posuere sed id purus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus at aliquet metus. Ut suscipit, mi non lacinia tristique, mi velit volutpat orci, at fermentum risus justo nec tellus. Nunc rutrum venenatis augue. Vivamus eget interdum odio. Cras auctor, velit sit amet feugiat varius, neque metus consectetur elit, eu luctus quam purus eget ante. Duis id consectetur velit, id egestas justo. Vestibulum eu malesuada quam. Fusce vel eros a odio rhoncus facilisis in vel dolor.
-  date: 2023-09-29 12:45:52
-  ticket_quantity: 1
-  price: 9.99
-  category: folk
-  promoter_id: 1
-
 twentyone:
   name: Event 21
   location: Location 21

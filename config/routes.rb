@@ -9,7 +9,4 @@ Rails.application.routes.draw do
   get "checkout", to: "checkouts#show"
   post 'checkouts/:id/destroy_checkout_session', to: 'checkouts#destroy_checkout_session', as: 'destroy_checkout_session'
 
-
-
-
 end

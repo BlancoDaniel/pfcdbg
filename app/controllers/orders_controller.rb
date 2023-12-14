@@ -29,7 +29,9 @@ class OrdersController < ApplicationController
             qr_ticket_service.generate_qr
         end
 
+        UserMailer.order_success_email(@order, current_client).deliver_now
     end
+    
       
 
     private

@@ -18,17 +18,21 @@ class ClientsController < ApplicationController
   end
 
   def create
-    @client = Client.create(client_params)
+    @client = Client.new(client_params)
     @client.user_id = current_user.id
-
-    return redirect_to root_path, notice: "Ya tiene usuario"  if user_has_profile?
+  
+    return redirect_to root_path, notice: "Ya tiene usuario" if user_has_profile?
+  
     if @client.save
       current_user.add_role :client
+      UserMailer.registration_success_email(@client).deliver_now
       return redirect_to root_path, notice: "Usuario cliente creado"
-
     end
+  
     render :new, status: :unprocessable_entity
   end
+  
+  
 
   private
 

@@ -1,0 +1,26 @@
+<!-- app/views/user_mailer/order_success_email.html.erb -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+</head>
+<body>
+  <h1>¡Confirmación de Pedido!</h1>
+
+  <p>Hola <%= @client.name %>,
+
+  <p>Te confirmamos que tu pedido ha sido procesado con éxito. A continuación, encontrarás detalles sobre tu pedido:</p>
+
+  <ul>
+    <li><strong>ID de Pedido:</strong> <%= @order.id %></li>
+    <!-- Otros detalles del pedido según tu modelo -->
+  </ul>
+
+  <!-- Agrega más información según sea necesario -->
+
+  <p>Gracias por elegir nuestro servicio. ¡Esperamos que disfrutes de tu experiencia!</p>
+
+  <p>Atentamente,<br>
+    El equipo de nuestra aplicación</p>
+</body>
+</html>

@@ -11,10 +11,12 @@
   </head>
 
   <body>
-    <%= render 'shared/header'%>
-    <%= alert%>
-    <%= notice %>
-    <%= yield %>
+    <%= render 'shared/header' %>
+    <%= render 'shared/flash' %>
+    <div class="yield-container">
+      <%= yield %>
+    </div>
+    <%= render 'shared/footer' %>
   </body>
-  <%= render 'shared/footer'%>
+  
 </html>

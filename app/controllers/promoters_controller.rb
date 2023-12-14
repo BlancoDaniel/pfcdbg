@@ -20,6 +20,7 @@ class PromotersController < ApplicationController
     return redirect_to root_path, notice: "Ya tiene usuario"  if user_has_profile?
      if @promoter.save
        current_user.add_role :promoter
+       UserMailer.promoter_registration_success_email(@promoter).deliver_now
        return redirect_to root_path, notice: "Usuario promotor creado"
 
      end

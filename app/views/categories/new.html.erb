@@ -1,7 +1,10 @@
-<h1><%=t('.title')%></h1>
-
-<%= render "form", category: @category %>
-
-<div>
-  <%= link_to t('common.back'), categories_path %>
+<div class="container">
+  <div class="row">
+    <div class="event-form">
+      <div class="form-header">
+        <h1><%= t('.title') %></h1>
+      </div>
+        <%= render "form", category: @category %>
+    </div>
+  </div>
 </div>

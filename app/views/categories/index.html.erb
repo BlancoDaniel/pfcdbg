@@ -1,5 +1,39 @@
-<h1><%= t(".title")%></h1>
+<div class="container">
+    <div class="row">
+        <div class="event-form">
+            <div class="form-header mt-3">
+                <h1><%= "Categorías" %></h1>
+            </div>
+            <table class="table table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Categoría</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% @categories.each do |category| %>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <tr>
+                                    <td><%= category.name %></td>
+                                    <td class="col-sm-5">
+                                        <a href="<%= edit_category_path(category) %>" class="btn">Editar</a>
+                                        <%= link_to "Borrar", category_path(category), method: :delete, data: { confirm: '¿Estás seguro?' }, class: "btn mx-3" %>
+                                    </td>
+                                </tr>
+                            </div>
+                        </div>
+                    <% end %>
+                    <tr>
+                        <td colspan="2">
+                            <%= link_to t(".new"), new_category_path, class: "btn"%>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
 
-<%= render partial: 'category', collection: @categories %>
+        </div>
+    </div>
+</div>
 
-<%= link_to t(".new"), new_category_path %>

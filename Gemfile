@@ -99,3 +99,5 @@ gem "rqrcode", "~> 2.0"
 gem 'wicked_pdf'
 
 gem 'wkhtmltopdf-binary'
+
+gem "letter_opener"
